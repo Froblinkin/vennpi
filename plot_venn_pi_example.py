@@ -1,4 +1,5 @@
 from pybedtools import BedTool
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
 from _venn_pie import pie2
@@ -24,8 +25,8 @@ markers = {
 }
 
 # dict counting annotations in each section of Venn diagram 
-venn2_dict = {}
-[venn_dict[x]={} for x in ["01","10","11"]]
+venn2_dict = {"01" : {}, "10" : {}, "11" : {}}
+
 
 for f in markers:
 	sub_peaksA = BedTool([x for x in peaksA if x.fields[3] == f])
